@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import express from 'express'
 import { connectDB } from './config/db.js';
 import productRoutes from './routes/product.route.js'
+import blogPostRoutes from './routes/blogpost.route.js'
 
 dotenv.config()
 
@@ -21,7 +22,7 @@ app.get('/', (req, res) => {
 
 // Gunakan Routes API
 app.use('/api/products', productRoutes);
-
+app.use('/api/blogposts', blogPostRoutes);
 
 const PORT = process.env.PORT;
 
